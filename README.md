@@ -224,3 +224,98 @@ AWS 3 Tier Architecture Application Running
 - RDS should remain private.
 - Terraform state management is important.
 - Proper monitoring reduces downtime.
+
+# Cost Optimization
+
+This project follows AWS cost optimization best practices to reduce unnecessary cloud spending while maintaining performance and availability.
+
+## Cost Optimization Strategies
+
+### 1. Right-Sized EC2 Instances
+
+- Used t2.micro / t3.micro instances for development environments.
+- Avoided over-provisioning compute resources.
+- Auto Scaling automatically adjusts capacity based on demand.
+
+### 2. Auto Scaling
+
+- Launches new instances only when required.
+- Terminates unused instances during low traffic periods.
+- Reduces infrastructure costs while maintaining availability.
+
+### 3. Private RDS Deployment
+
+- Database deployed in private subnets.
+- Prevents unnecessary public exposure.
+- Improves security without additional infrastructure costs.
+
+### 4. Terraform Infrastructure as Code
+
+- Prevents resource duplication.
+- Enables quick teardown of unused environments.
+
+```bash
+terraform destroy
+```
+
+### 5. Resource Tagging
+
+Resources are tagged for better cost tracking.
+
+Example:
+
+```hcl
+tags = {
+  Environment = "Dev"
+  Project     = "AWS-3Tier-Architecture"
+}
+```
+
+### 6. Monitoring with CloudWatch
+
+- Monitor CPU Utilization
+- Monitor Memory Usage
+- Monitor Application Health
+
+Helps identify underutilized resources for optimization.
+
+### 7. Backup Management
+
+- Automated RDS backups configured.
+- Retention period adjusted according to business requirements.
+- Old snapshots removed to reduce storage costs.
+
+### 8. Security Group Optimization
+
+- Restricted network access.
+- Reduced unnecessary data transfer and exposure risks.
+
+## Estimated Monthly Cost (Free Tier Eligible)
+
+| Service | Estimated Cost |
+|----------|---------------|
+| VPC | Free |
+| Security Groups | Free |
+| EC2 t2.micro | Free Tier Eligible |
+| Application Load Balancer | Low Cost |
+| RDS MySQL | Free Tier Eligible |
+| CloudWatch | Basic Monitoring Free |
+
+> Note: Actual cost depends on traffic, storage, backup retention, and region.
+
+## Cost Monitoring
+
+AWS services used for monitoring spending:
+
+- AWS Cost Explorer
+- AWS Budgets
+- CloudWatch Metrics
+
+## Lessons Learned
+
+- Always delete unused resources.
+- Remove unattached EBS volumes.
+- Delete old snapshots.
+- Stop idle EC2 instances.
+- Use Auto Scaling instead of permanently running large instances.
+- Monitor AWS costs regularly using Cost Explorer and Budgets.
