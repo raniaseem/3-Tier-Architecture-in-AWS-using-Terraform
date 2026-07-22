@@ -1,0 +1,86 @@
+Project Title
+AWS 3-Tier Architecture using Terraform
+Overview
+
+This project demonstrates deployment of a highly available and scalable 3-tier web application architecture on AWS using Terraform.
+
+Technologies Used
+AWS
+Terraform
+EC2
+VPC
+ALB
+RDS MySQL
+Auto Scaling
+Security Groups
+CloudWatch
+
+Components
+Web Tier
+Application Load Balancer
+Public Subnets
+Route 53
+Application Tier
+EC2 Instances
+Auto Scaling Group
+Database Tier
+Amazon RDS MySQL
+Private Subnets
+Terraform Modules
+Module	Purpose
+VPC	Networking
+ALB	Load Balancer
+EC2	Application Servers
+RDS	Database
+Security Group	Access Control
+Infrastructure Created
+VPC
+├── 2 Public Subnets
+├── 2 Private App Subnets
+├── 2 Private DB Subnets
+├── Internet Gateway
+├── NAT Gateway
+└── Route Tables
+
+Deployment Steps
+git clone 
+
+
+cd terraform
+
+terraform init
+
+terraform validate
+
+terraform plan
+
+terraform apply
+Application Validation
+Load Balancer URL
+http://alb-dns-name
+
+Expected Output:
+
+AWS 3 Tier Application Running
+Security Best Practices
+Private RDS
+Least Privilege IAM
+Security Group Restrictions
+Terraform State Protection
+Secrets Management
+Monitoring
+CloudWatch Metrics
+CloudWatch Alarms
+Application Logs
+Cost Optimization
+Right-sized EC2
+Automated RDS Backups
+Auto Scaling
+Resource Tagging
+Troubleshooting Guide
+ALB 502 Error
+sudo systemctl status app
+RDS Connection Issue
+telnet rds-endpoint 3306
+Terraform State Lock
+terraform force-unlock
