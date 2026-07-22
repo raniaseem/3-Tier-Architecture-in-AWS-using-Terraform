@@ -26,6 +26,12 @@ CloudWatch
 # VPC Configuration
 <img width="940" height="417" alt="image" src="https://github.com/user-attachments/assets/e343fe6b-32aa-4835-b0f5-b75678a3a6eb" />
 
+# IAM role with EC2 Permission
+<img width="940" height="418" alt="image" src="https://github.com/user-attachments/assets/cbbf3725-7a02-47f4-9f39-3366f15fc0d1" />
+
+# RDS Database in 2 Availability Zones
+<img width="940" height="419" alt="image" src="https://github.com/user-attachments/assets/5b5c5fa8-b717-4170-9ed3-5160fcdb1e8c" />
+
 # Application Running
 <img width="940" height="408" alt="image" src="https://github.com/user-attachments/assets/4985f1ec-be29-4e60-b328-5a7118966e2a" />
 
